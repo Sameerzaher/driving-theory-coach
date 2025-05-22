@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "563895531058",
+    "project_id": "teoria-gpt",
+    "storage_bucket": "teoria-gpt.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563895531058:android:cdb092990c0f130c1dee2b",
+        "android_client_info": {
+          "package_name": "com.example.teoria_gpt_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563895531058-79dmd6d1njqdkclp09kgs5uetfm3nnfp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teoria_gpt_app",
+            "certificate_hash": "ef71ae509cf780bbbd48d55b71015786fd32c1e7"
+          }
+        },
+        {
+          "client_id": "563895531058-0tjtkao2mpm1nnj23gpdsn1asd1j9jka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-b9pP2bH1ZqCFGi9G2cYS0gN0hVYgJtc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563895531058-0tjtkao2mpm1nnj23gpdsn1asd1j9jka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
