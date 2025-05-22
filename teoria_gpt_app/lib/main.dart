@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'screens/login_screen.dart'; // מסך התחברות באימייל
-import 'screens/home_screen.dart';  // מסך בית האמיתי שלך עם הכפתורים
+import 'screens/topics_screen.dart';
+// מסכים:
+import 'screens/login_screen.dart'; // התחברות באימייל
+import 'screens/home_screen.dart';  // מסך הבית שלך
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +24,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: AuthWrapper(),
       routes: {
-        '/topics': (_) => PlaceholderScreen(title: 'תרגול לפי נושא'),
+        '/topics': (_) => TopicsScreen(),
+        // '/topics': (_) => PlaceholderScreen(title: 'תרגול לפי נושא'),
         '/exam': (_) => PlaceholderScreen(title: 'מבחן מלא'),
         '/chat': (_) => PlaceholderScreen(title: 'דבר עם GPT'),
         '/progress': (_) => PlaceholderScreen(title: 'התקדמות אישית'),
@@ -43,21 +46,20 @@ class AuthWrapper extends StatelessWidget {
           final user = snapshot.data!;
           return HomeScreen(
             userName: user.displayName ?? user.email ?? 'תלמיד',
-            subscriptionStatus: 'פעיל', // תוכל לשלוף מפיירסטור בהמשך
+            subscriptionStatus: 'פעיל', // תוכל לשלוף מפיירסטור בעתיד
           );
         } else {
-          return EmailLoginScreen(); // מסך התחברות באימייל
+          return EmailLoginScreen();
         }
       },
     );
   }
 }
 
-// מסך זמני – להחליף בהמשך בגרסאות אמיתיות
 class PlaceholderScreen extends StatelessWidget {
   final String title;
   const PlaceholderScreen({required this.title, super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
