@@ -35,8 +35,10 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   void _checkAnswer(String answer) {
-    final correctIndex = _questions[_currentIndex]['מספר התשובה הנכונה'];
-    final correctAnswer = _questions[_currentIndex]['תשובה $correctIndex'];
+    final correctIndex =
+        _questions[_currentIndex]['מספר התשובה הנכונה'].toString();
+    final correctAnswer =
+        _questions[_currentIndex]['תשובה $correctIndex'];
 
     setState(() {
       _selectedAnswer = answer;
@@ -65,7 +67,7 @@ class _QuizScreenState extends State<QuizScreen> {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.pop(context); // סגור את הדיאלוג
+              Navigator.pop(context); // סגור דיאלוג
               Navigator.pop(context); // חזור למסך הקודם
             },
             child: const Text('חזרה'),
@@ -85,7 +87,7 @@ class _QuizScreenState extends State<QuizScreen> {
     }
 
     final question = _questions[_currentIndex];
-    final correctIndex = question['מספר התשובה הנכונה'];
+    final correctIndex = question['מספר התשובה הנכונה'].toString();
     final correctAnswer = question['תשובה $correctIndex'];
 
     return Scaffold(
@@ -98,7 +100,7 @@ class _QuizScreenState extends State<QuizScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              question['שאלה'] ?? '',
+              question['השאלה'] ?? '',
               style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 24),
